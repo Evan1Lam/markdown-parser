@@ -38,6 +38,12 @@ public class MarkdownParse {
             if (closeParen == -1) {
                 break;
             }
+            int imageIndicator = markdown.indexOf("!", currentIndex);
+
+            if (imageIndicator == openBracket - 1) {
+                currentIndex += 2;
+                continue;
+            }
             //System.out.println(closeParen);
         
             toReturn.add(markdown.substring(openParen + 1, closeParen));
