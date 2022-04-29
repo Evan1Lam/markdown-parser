@@ -52,13 +52,13 @@ public class MarkdownParseTest {
     @Test 
 
     //test name
-    public void getLinks3() throws IOException {
+    public void getLinks3() throws IOException { ///////////// make this one fail
         //checks if two arguments are equal
         MarkdownParse parse = new MarkdownParse();
         Path fileName = Path.of("newTest2-file.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = parse.getLinks(content);
-         assertEquals("https://something.com", links.get(0));
+         assertEquals("https://something.co", links.get(0));
          assertEquals(1, links.size());
 
 
