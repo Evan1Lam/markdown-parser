@@ -40,7 +40,10 @@ public class MarkdownParse {
             }
             int imageIndicator = markdown.indexOf("!", currentIndex);
 
-            if (imageIndicator == openBracket - 1) {
+            //index 0
+
+
+            if (imageIndicator != -1 && imageIndicator == openBracket - 1) {
                 currentIndex += 2;
                 continue;
             }
