@@ -60,6 +60,7 @@ public class MarkdownParseTest {
         ArrayList<String> links = parse.getLinks(content);
          assertEquals("https://something.com", links.get(0));
          assertEquals(1, links.size());
+         System.out.println();
 
 
     }
