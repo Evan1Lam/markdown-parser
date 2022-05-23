@@ -89,9 +89,10 @@ public class MarkdownParseTest {
         Path fileName = Path.of("snippet1.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = parse.getLinks(content);
-         assertEquals("url.com", links.get(0));
-         assertEquals("google.com", links.get(1));
-         assertEquals(2, links.size());
+         assertEquals("`google.com", links.get(1));
+         assertEquals(1, links.size());
+
+         
 
 
     }
@@ -104,9 +105,8 @@ public class MarkdownParseTest {
         Path fileName = Path.of("snippet2.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = parse.getLinks(content);
-         assertEquals("b.com", links.get(0));
-         assertEquals("example.com", links.get(1));
-         assertEquals(2, links.size());
+         assertEquals("a.com(())", links.get(1));
+         assertEquals(1, links.size());
 
 
     }
@@ -119,9 +119,8 @@ public class MarkdownParseTest {
         Path fileName = Path.of("snippet3.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = parse.getLinks(content);
-         assertEquals("https://www.twitter.com", links.get(0));
          assertEquals("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule", links.get(1));
-         assertEquals(2, links.size());
+         assertEquals(1, links.size());
 
 
     }
